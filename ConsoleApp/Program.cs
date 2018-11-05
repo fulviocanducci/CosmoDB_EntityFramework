@@ -13,7 +13,10 @@ namespace ConsoleApp
                 //db.Database.EnsureDeleted();
                 //db.Database.EnsureCreated();
                 //
-                var items = db.People.ToList();
+                var item = db.People.FirstOrDefault();
+                item.Active = false;
+                item.Name = item.Name.ToUpperInvariant();
+                db.SaveChanges();
                 //var p = new Models.People
                 //{
                 //    Name = "Hugo Leonardo Canducci Dias",
